@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Omar Hassan Mansour — Social Media Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12141B; --ink-2:#1C1F29; --paper:#F3EFE6; --paper-dim:#B9B3A4;
+  --amber:#E7A93D; --amber-dim:#9C7A3A; --line:#33374350;
+  --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Arial,sans-serif;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--ink:#12141B;--ink-2:#1C1F29;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  -webkit-font-smoothing:antialiased;}
+img,svg{max-width:100%;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+a{color:var(--amber);}
+section{padding:88px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;}
+.eyebrow{color:var(--amber);font-size:.9rem;font-weight:500;}
+.lede{max-width:62ch;color:var(--paper-dim);font-size:1.08rem;}
+
+/* HERO */
+.hero{padding:120px 0 90px;}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.04;max-width:14ch;}
+.hero .role{font-size:1.25rem;color:var(--amber);margin-top:18px;font-weight:500;}
+.hero p.lede{margin-top:22px;font-size:1.15rem;}
+.hero-stat{margin-top:46px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;}
+.hero-stat .num{font-family:var(--serif);font-size:3rem;color:var(--amber);}
+.hero-stat .cap{color:var(--paper-dim);max-width:28ch;font-size:.95rem;}
+.cta-row{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;}
+.btn{border:1px solid var(--paper);color:var(--paper);padding:12px 22px;font-size:.95rem;
+  text-decoration:none;transition:background .15s,color .15s;}
+.btn.primary{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:600;}
+.btn:hover{background:var(--paper);color:var(--ink);}
+.btn.primary:hover{background:transparent;color:var(--amber);}
+
+/* STAT GRID */
+.platform-label{font-size:.85rem;color:var(--paper-dim);margin:36px 0 14px;padding-top:20px;border-top:1px solid var(--line);}
+.platform-label:first-of-type{border-top:none;padding-top:0;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.grid .card{background:var(--ink);padding:26px 22px;}
+.card .num{font-family:var(--serif);font-size:2.1rem;color:var(--paper);}
+.card .delta{color:var(--amber);font-size:.85rem;font-weight:600;margin-left:6px;}
+.card .lbl{color:var(--paper-dim);font-size:.85rem;margin-top:6px;}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr);}}
+
+.ads-strip{margin-top:40px;padding-top:36px;border-top:1px solid var(--line);}
+.ads-grid{display:flex;flex-wrap:wrap;gap:36px;margin-top:18px;}
+.ads-grid .item .num{font-family:var(--serif);font-size:1.8rem;color:var(--amber);}
+.ads-grid .item .lbl{color:var(--paper-dim);font-size:.85rem;}
+
+/* CASE STUDY */
+.funnel{display:flex;flex-direction:column;gap:0;margin-top:36px;}
+.stage{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 0;border-top:1px solid var(--line);}
+.stage:last-child{border-bottom:1px solid var(--line);}
+.stage .tag{color:var(--amber);font-size:.85rem;padding-top:3px;}
+.stage h3{font-size:1.15rem;color:var(--paper);margin-bottom:8px;}
+.stage p{color:var(--paper-dim);font-size:.97rem;max-width:62ch;}
+.stage .hook{font-style:italic;color:var(--paper);border-left:2px solid var(--amber);padding-left:14px;margin-top:10px;font-size:.95rem;}
+@media(max-width:640px){.stage{grid-template-columns:1fr;gap:8px;}}
+.case-result{margin-top:34px;background:var(--ink-2);padding:26px;display:flex;gap:40px;flex-wrap:wrap;}
+.case-result .num{font-family:var(--serif);color:var(--amber);font-size:1.9rem;}
+.case-result .lbl{color:var(--paper-dim);font-size:.85rem;}
+
+/* TIMELINE */
+.job{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:30px 0;border-top:1px solid var(--line);}
+.job:last-child{border-bottom:1px solid var(--line);}
+.job .when{color:var(--paper-dim);font-size:.9rem;}
+.job h3{font-size:1.2rem;color:var(--paper);}
+.job .org{color:var(--amber);font-size:.95rem;margin-bottom:10px;}
+.job ul{color:var(--paper-dim);padding-left:18px;font-size:.95rem;}
+.job li{margin-bottom:6px;}
+@media(max-width:640px){.job{grid-template-columns:1fr;}}
+
+/* SKILLS */
+.skill-group{margin-top:30px;}
+.skill-group h3{font-size:.95rem;color:var(--amber);font-weight:500;margin-bottom:12px;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;}
+.chip{border:1px solid var(--line);color:var(--paper-dim);padding:7px 14px;font-size:.87rem;}
+
+/* EDU */
+.edu-row{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid var(--line);flex-wrap:wrap;}
+.edu-row:last-child{border-bottom:1px solid var(--line);}
+.edu-row .t{color:var(--paper);}
+.edu-row .s{color:var(--paper-dim);font-size:.9rem;}
+
+/* FOOTER */
+footer{padding:80px 0 70px;}
+footer h2{font-size:clamp(2rem,4.5vw,2.8rem);max-width:14ch;}
+.contact-list{margin-top:34px;display:flex;flex-direction:column;gap:12px;font-size:1.05rem;}
+.contact-list a{color:var(--paper);}
+.foot-note{margin-top:50px;color:var(--paper-dim);font-size:.85rem;}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Omar Hassan Mansour · Cairo, Egypt</p>
+    <h1>Social media strategy that turns followers into paying students.</h1>
+    <p class="role">Social Media Specialist / Manager — Content, Paid Social &amp; Growth</p>
+    <p class="lede">A year of managing Meta pages for an engineering education brand, taking course sales from 1,530 to 3,300 in three months and page reach up 700% — through content strategy, campaign execution and daily performance tracking, not guesswork.</p>
+    <div class="hero-stat">
+      <span class="num">+700%</span>
+      <span class="cap">reach growth across Facebook &amp; Instagram in one quarter at KAITECH</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:omarhassansaidy@gmail.com">Email me</a>
+      <a class="btn" href="https://wa.me/201095077723" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://linkedin.com/in/-omar-elsaidy" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <p class="eyebrow">Results</p>
+    <h2>The last 28 days on KAITECH's pages</h2>
+    <p class="lede" style="margin-top:12px">Pulled straight from Meta Business Suite, Jul 27 – Aug 23, 2026.</p>
+
+    <p class="platform-label">Instagram</p>
+    <div class="grid">
+      <div class="card"><div class="num">350.3K<span class="delta">views</span></div><div class="lbl">28-day content views</div></div>
+      <div class="card"><div class="num">54.2K<span class="delta">+644%</span></div><div class="lbl">Accounts reached</div></div>
+      <div class="card"><div class="num">747<span class="delta">+470%</span></div><div class="lbl">New follows</div></div>
+      <div class="card"><div class="num">1.7K<span class="delta">+358%</span></div><div class="lbl">Profile visits</div></div>
+      <div class="card"><div class="num">1.2K<span class="delta">+1,090%</span></div><div class="lbl">Link clicks</div></div>
+      <div class="card"><div class="num">377<span class="delta">+256%</span></div><div class="lbl">Content interactions</div></div>
+    </div>
+
+    <p class="platform-label">Facebook</p>
+    <div class="grid">
+      <div class="card"><div class="num">4.0M<span class="delta">+742%</span></div><div class="lbl">28-day content views</div></div>
+      <div class="card"><div class="num">397.5K<span class="delta">+322%</span></div><div class="lbl">Viewers reached</div></div>
+      <div class="card"><div class="num">1.2K<span class="delta">+115%</span></div><div class="lbl">New follows</div></div>
+      <div class="card"><div class="num">22.2K<span class="delta">+69%</span></div><div class="lbl">Page visits</div></div>
+      <div class="card"><div class="num">14.2K<span class="delta">+537%</span></div><div class="lbl">Link clicks</div></div>
+      <div class="card"><div class="num">1.4K<span class="delta">+389%</span></div><div class="lbl">Content interactions</div></div>
+    </div>
+
+    <div class="ads-strip">
+      <p class="platform-label" style="border:none;margin:0;padding:0;">Meta Ads managed — one 30-day scholarship push</p>
+      <div class="ads-grid">
+        <div class="item"><div class="num">102.8K EGP</div><div class="lbl">Ad spend managed across 14 ad sets</div></div>
+        <div class="item"><div class="num">4.27M</div><div class="lbl">Impressions delivered</div></div>
+        <div class="item"><div class="num">985.8K</div><div class="lbl">People reached</div></div>
+        <div class="item"><div class="num">3,266</div><div class="lbl">Messaging conversations started</div></div>
+        <div class="item"><div class="num">2,576</div><div class="lbl">New leads generated</div></div>
+        <div class="item"><div class="num">31.5 EGP</div><div class="lbl">Average cost per conversation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creative">
+  <div class="wrap">
+    <p class="eyebrow">Creative direction</p>
+    <h2>Every campaign starts as a concept, not a caption</h2>
+    <p class="lede" style="margin-top:12px">Before a word is written, the campaign gets a visual system and a mechanic — urgency, proof, or curriculum clarity — so design, copy and video all pull in the same direction. See the full archive on <a href="https://www.facebook.com/KAITECH1" target="_blank" rel="noopener">Facebook</a>.</p>
+
+    <div class="chips" style="margin-top:28px;gap:12px">
+      <span class="chip">Countdown &amp; urgency creatives ("24 hours left", "7 days left")</span>
+      <span class="chip">Curriculum roadmap carousels</span>
+      <span class="chip">Free workshop announcements</span>
+      <span class="chip">Course-launch banners (BIM + AI)</span>
+      <span class="chip">Scholarship deadline campaigns</span>
+      <span class="chip">Reel scripts &amp; shot direction</span>
+    </div>
+    <p style="margin-top:22px;color:var(--paper-dim);font-size:.95rem;max-width:62ch">Reels aren't handed off blind — scripts, shot lists and pacing are written first, then briefed to the shoot, so the footage matches the hook it was built to deliver.</p>
+  </div>
+</section>
+
+<section id="case-study">
+  <div class="wrap">
+    <p class="eyebrow">Case study</p>
+    <h2>Building the funnel behind KAITECH's BIM &amp; AI scholarship</h2>
+    <p class="lede" style="margin-top:12px">Every piece of content was written to move one specific audience — recent engineering grads, working engineers, senior specialists — one step closer to enrolling. Below is the actual funnel logic used.</p>
+
+    <div class="funnel">
+      <div class="stage">
+        <div class="tag">Awareness</div>
+        <div><h3>Speak to the fear, not the feature</h3>
+        <p>Posts opened with the question the audience was already asking themselves — "final year and still don't feel job-ready?" — before introducing the diploma.</p>
+        <p class="hook">"The certificate alone isn't enough anymore — companies want people who can already work the tools real projects use."</p></div>
+      </div>
+      <div class="stage">
+        <div class="tag">Consideration</div>
+        <div><h3>Show the roadmap, not the syllabus</h3>
+        <p>Carousels broke the diploma into a visible path — BIM fundamentals → AI &amp; prompt engineering → automation with Dynamo/Python → a capstone project — so prospects could see exactly where they'd end up.</p>
+        <p class="hook">"Every stage builds on the one before it, so you're market-ready, not just certificate-ready."</p></div>
+      </div>
+      <div class="stage">
+        <div class="tag">Sales</div>
+        <div><h3>Let graduates close the deal</h3>
+        <p>Reels cut between real graduates answering the same question in their own words — proof over promises — paired with a direct link/WhatsApp CTA during enrollment windows.</p>
+        <p class="hook">"This could be your success story next. Book your seat through the link."</p></div>
+      </div>
+    </div>
+
+    <div class="case-result">
+      <div><div class="num">1,530 → 3,300</div><div class="lbl">course sales in 3 months</div></div>
+      <div><div class="num">2,576</div><div class="lbl">funnel leads from paid social</div></div>
+      <div><div class="num">3</div><div class="lbl">platforms run in parallel — Facebook, Instagram, LinkedIn</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h2>Where the numbers above came from</h2>
+
+    <div class="job">
+      <div class="when">2026 · Cairo</div>
+      <div><h3>Social Media Manager</h3><div class="org">KAITECH — engineering &amp; BIM training</div>
+      <ul>
+        <li>Owned Facebook, Instagram and LinkedIn for a BIM/engineering education brand; grew course sales from 1,530 to 3,300 in three months.</li>
+        <li>Lifted page reach 700% through funnel-based content planning and continuous optimization.</li>
+        <li>Set up and ran Meta Ads campaigns end to end — targeting, budgets, monitoring, optimization.</li>
+        <li>Tracked reach, views, engagement, link clicks, followers, leads and sales weekly to steer content decisions.</li>
+      </ul></div>
+    </div>
+
+    <div class="job">
+      <div class="when">Mar 2025 – Mar 2026</div>
+      <div><h3>Social Media Specialist</h3><div class="org">Elsaidy Company</div>
+      <ul>
+        <li>Ran three pages across Facebook, Instagram and TikTok with a consistent publishing cadence.</li>
+        <li>Built three-month content plans tied to marketing goals and audience interests.</li>
+        <li>Grew followers 20% through targeted content and campaigns; supported paid ads and reporting.</li>
+      </ul></div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jan 2024 – Feb 2025</div>
+      <div><h3>Real Estate Agent</h3><div class="org">Bold Routes</div>
+      <ul>
+        <li>Managed client communication and follow-up in a target-driven sales environment — the CRM instincts now behind every lead-gen campaign.</li>
+      </ul></div>
+    </div>
+
+    <div class="job">
+      <div class="when">Apr 2023 – Feb 2024</div>
+      <div><h3>Call Center Agent</h3><div class="org">Etisalat</div>
+      <ul>
+        <li>Handled customer inquiries while promoting telecom bundles against monthly and quarterly KPIs.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Skills</p>
+    <h2>What I bring to a page on day one</h2>
+
+    <div class="skill-group"><h3>Strategy &amp; content</h3>
+      <div class="chips"><span class="chip">Social media strategy</span><span class="chip">Content planning</span><span class="chip">Copywriting</span><span class="chip">Audience targeting</span><span class="chip">Engagement growth</span><span class="chip">Conversion-focused content</span></div></div>
+
+    <div class="skill-group"><h3>Paid &amp; performance</h3>
+      <div class="chips"><span class="chip">Meta Ads Manager</span><span class="chip">Paid social</span><span class="chip">Campaign management</span><span class="chip">Lead generation</span><span class="chip">KPI tracking</span><span class="chip">Google Analytics</span></div></div>
+
+    <div class="skill-group"><h3>Platforms &amp; tools</h3>
+      <div class="chips"><span class="chip">Facebook</span><span class="chip">Instagram</span><span class="chip">LinkedIn</span><span class="chip">TikTok</span><span class="chip">Canva</span><span class="chip">Photoshop</span><span class="chip">CapCut</span><span class="chip">Meta Business Suite</span><span class="chip">Mailchimp</span><span class="chip">Google Sheets</span><span class="chip">Claude, ChatGPT &amp; Gemini</span></div></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <p class="eyebrow">Education &amp; training</p>
+    <h2>Formal training behind the results</h2>
+
+    <div class="edu-row"><span class="t">Bachelor of Commerce, Accounting — Ain Shams University</span><span class="s">2025</span></div>
+    <div class="edu-row"><span class="t">Social Media Marketing — Information Technology Institute (ITI)</span><span class="s">2026</span></div>
+    <div class="edu-row"><span class="t">Digital Marketing, Digital Advertising &amp; Email Marketing — HubSpot</span><span class="s">2026</span></div>
+    <div class="edu-row"><span class="t">AI Tools for Productivity &amp; Business Applications</span><span class="s">2026</span></div>
+    <div class="edu-row"><span class="t">Microsoft Excel &amp; PowerPoint</span><span class="s">2026</span></div>
+
+    <p style="margin-top:30px;color:var(--paper-dim);font-size:.95rem">Also: International Press Coordinator (volunteer) at the Cairo International Film Festival, 2026 · Banking intern at EGY Bank &amp; CIB, 2024 · Arabic (native), English (very good).</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Open to remote roles worldwide — and ready to relocate for the right opportunity in the Gulf.</h2>
+    <div class="contact-list">
+      <a href="mailto:omarhassansaidy@gmail.com">omarhassansaidy@gmail.com</a>
+      <a href="https://wa.me/201095077723" target="_blank" rel="noopener">+20 109 507 7723 (WhatsApp)</a>
+      <a href="https://linkedin.com/in/-omar-elsaidy" target="_blank" rel="noopener">linkedin.com/in/-omar-elsaidy</a>
+    </div>
+    <p class="foot-note">Omar Hassan Mansour — Social Media Specialist, Cairo, Egypt.</p>
+  </div>
+</footer>
+
+</body>
+</html>
